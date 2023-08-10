@@ -1,19 +1,31 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchProducts } from '../../redux/products/productsAction'
+import Product from '../products/Product'
 
 export default function Store() {
-    const products = useSelector(state => state.productsState)
+    const productsState = useSelector(state => state.productsState)
     const dispatch = useDispatch()
-    console.log(products);
+    console.log(productsState);
     useEffect(() => {
-        dispatch(fetchProducts())
+        if (!productsState.products.length) dispatch(fetchProducts())
     } , [])
 
     return (
-        <div>
-            <div>
-                
+        <div className='mt-[70px]'>
+            <div className='grid grid-cols-4 '>
+                {
+                    productsState.loading ? <p>Loading ...</p> :
+                        productsState.error ? <p>Errr</p> :
+                            productsState.products.map(item =>{
+                                return (
+                                    <Product
+                                        key={item.id}
+                                        item={item}
+                                    />
+                                )
+                            })
+                }
             </div>
         </div>
     )
