@@ -2,6 +2,8 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchProducts } from '../../redux/products/productsAction'
 import Product from '../products/Product'
+import Loader from '../Loader/Loader'
+import Error from '../404/404'
 
 export default function Store() {
     const productsState = useSelector(state => state.productsState)
@@ -15,8 +17,8 @@ export default function Store() {
         <div className='mt-[70px]'>
             <div className='grid grid-cols-4 '>
                 {
-                    productsState.loading ? <p>Loading ...</p> :
-                        productsState.error ? <p>Errr</p> :
+                    productsState.loading ? <Loader /> :
+                        productsState.error ? <Error /> :
                             productsState.products.map(item =>{
                                 return (
                                     <Product
