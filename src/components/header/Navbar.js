@@ -18,7 +18,7 @@ export default function Navbar() {
                             <h2 className='font-bold text-xl text-center text-blue-700	'>SHOPING</h2>
                         </div>
                     </Link>
-                    <div className='w-96 relative bg-[#f1f2f4] rounded flex items-center p-1'>
+                    <div className='w-96 relative bg-[#f1f2f4] rounded flex items-center p-1 max-sm:hidden'>
                         <input className='w-full bg-inherit	rounded focus:outline-none p-1 pl-8 text-gray-500' type="text" />
                         <img className='absolute w-6' src={magnifying} alt='magnifying' />
                     </div>
