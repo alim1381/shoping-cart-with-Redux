@@ -52,6 +52,24 @@ const cartReducer = (state = initialState , action) => {
                 ...state,
                 ...sumItem(state.cart)
             }
+        case "CHECKOUT" :
+            if (state.total > 0) {
+                return {
+                    cart : [],
+                    itemCounter : 0,
+                    total : 0,
+                    checkout : true
+                }
+            } else {
+                return state ;
+            }
+        case "CLEAR" :
+            return {
+                cart : [],
+                itemCounter : 0,
+                total : 0,
+                checkout : false
+            }
         default :
             return state ;
     }

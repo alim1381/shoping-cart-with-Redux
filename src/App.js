@@ -4,6 +4,7 @@ import store from "./redux/store";
 import { Navigate, Route, Routes } from "react-router-dom";
 import Store from "./components/store/Store";
 import Detailes from "./components/products/Detailes";
+import Cart from "./components/cart/Cart";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path='/products' element={<Store />} />
+          <Route path='/cart' element={<Cart />} />
           <Route path='/products/:id' element={<Detailes />} />
           <Route path='/*' element={<Navigate to="/products" />} />
 

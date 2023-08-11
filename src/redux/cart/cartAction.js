@@ -26,4 +26,16 @@ const decrease = (product) => {
     }
 }
 
-export { addToCart , removeFromCart , increase , decrease } ;
+const checkout = () => {
+    return {
+        type : "CHECKOUT",
+    }
+}
+
+const clear = () => {
+    return {
+        type : "CLEAR",
+    }
+}
+
+export { addToCart , removeFromCart , increase , decrease , checkout , clear } ;

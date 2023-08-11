@@ -13,7 +13,7 @@ export default function Navbar() {
         <nav className='flex w-full container-4xl-w mx-auto pos-relative px-4-md grow-1'>
             <div className='w-full py-5 flex pos-relative z-2 justify-between'>
                 <div className='flex flex-1 grow-1'>
-                    <Link className='ml-5 shrink-0 text-center flex items-center'>
+                    <Link to={`/producs`} className='ml-5 shrink-0 text-center flex items-center'>
                         <div style={{width: "115px" , height: "30px"}}>
                             <h2 className='font-bold text-xl text-center text-blue-700	'>SHOPING</h2>
                         </div>
@@ -24,7 +24,7 @@ export default function Navbar() {
                     </div>
                 </div>
                 <div className='flex'>
-                    <Link>
+                    <Link to={`/cart`}>
                         <div className='relative flex p-1 mr-8'>
                             <img className='w-8' src={cart} alt='cart' />
                             <span className='absolute right-0 text-center text-xs bg-blue-700 p-1 rounded-[50%] text-white flex justify-center items-center' style={{width : "20px" , height : "20px"}}>{cartState.itemCounter}</span>
